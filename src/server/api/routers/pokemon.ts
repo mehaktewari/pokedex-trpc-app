@@ -10,7 +10,6 @@ export const pokemonRouter = createTRPCRouter({
         where: {
           name: {
             equals: input,
-            mode: "insensitive",
           },
         },
       });

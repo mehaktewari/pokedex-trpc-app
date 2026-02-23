@@ -61,7 +61,11 @@ export default function Home() {
           <Typography sx={{ textTransform: "capitalize" }}>
             Types: {singlePokemon.types}
           </Typography>
-          <img src={singlePokemon.sprite} width={120} />
+          <img
+            src={singlePokemon.sprite}
+            width={120}
+            alt={singlePokemon.name}
+          />
         </div>
       )}
 

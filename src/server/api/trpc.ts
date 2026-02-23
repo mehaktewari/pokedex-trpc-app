@@ -11,9 +11,7 @@ import { db } from "~/server/db";
 export const createTRPCContext = async (
   _opts: CreateNextContextOptions,
 ) => {
-  return {
-    db,
-  };
+  return { db };
 };
 
 /**
@@ -37,5 +35,4 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
  * ROUTER & PROCEDURE
  */
 export const createTRPCRouter = t.router;
-
 export const publicProcedure = t.procedure;
