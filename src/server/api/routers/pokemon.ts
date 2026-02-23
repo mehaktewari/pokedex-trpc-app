@@ -6,7 +6,7 @@ export const pokemonRouter = createTRPCRouter({
   getPokemonByName: publicProcedure
     .input(z.string())
     .query(async ({ ctx, input }) => {
-      return ctx.prisma.pokemon.findFirst({
+      return ctx.db.pokemon.findFirst({
         where: {
           name: {
             equals: input,
@@ -19,7 +19,7 @@ export const pokemonRouter = createTRPCRouter({
   getMultiplePokemon: publicProcedure
     .input(z.array(z.string()))
     .query(async ({ ctx, input }) => {
-      return ctx.prisma.pokemon.findMany({
+      return ctx.db.pokemon.findMany({
         where: {
           name: {
             in: input,
@@ -31,10 +31,10 @@ export const pokemonRouter = createTRPCRouter({
   getPokemonByType: publicProcedure
     .input(z.string())
     .query(async ({ ctx, input }) => {
-      return ctx.prisma.pokemon.findMany({
+      return ctx.db.pokemon.findMany({
         where: {
           types: {
-            has: input,
+            contains: input,
           },
         },
       });

@@ -1,11 +1,16 @@
 import { TableRow, TableCell, Avatar } from "@mui/material";
+import type { Pokemon } from "@prisma/client";
 
-export const PokemonRow = ({ pokemon }) => {
+type PokemonRowProps = {
+  pokemon: Pokemon;
+};
+
+export const PokemonRow = ({ pokemon }: PokemonRowProps) => {
   return (
     <TableRow>
       <TableCell>{pokemon.id}</TableCell>
       <TableCell>{pokemon.name}</TableCell>
-      <TableCell>{pokemon.types.join(", ")}</TableCell>
+      <TableCell>{pokemon.types}</TableCell>
       <TableCell>
         <Avatar src={pokemon.sprite} />
       </TableCell>
