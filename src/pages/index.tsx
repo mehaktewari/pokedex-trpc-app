@@ -27,9 +27,7 @@ export default function Home() {
         label="Search Pokemon"
         variant="outlined"
         fullWidth
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setSearch(e.target.value)
-        }
+        onChange={(e) => setSearch(e.target.value)}
       />
 
       {isLoading && <CircularProgress />}
