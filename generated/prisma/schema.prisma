@@ -73,3 +73,10 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Pokemon {
+  id     Int    @id @default(autoincrement())
+  name   String @unique
+  types  String
+  sprite String
+}

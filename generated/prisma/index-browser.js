@@ -163,6 +163,13 @@ exports.Prisma.VerificationTokenScalarFieldEnum = {
   expires: 'expires'
 };
 
+exports.Prisma.PokemonScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  types: 'types',
+  sprite: 'sprite'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -179,7 +186,8 @@ exports.Prisma.ModelName = {
   Account: 'Account',
   Session: 'Session',
   User: 'User',
-  VerificationToken: 'VerificationToken'
+  VerificationToken: 'VerificationToken',
+  Pokemon: 'Pokemon'
 };
 
 /**
